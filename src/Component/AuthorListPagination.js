@@ -16,7 +16,6 @@ const AuthorListPagination = ({
     const starting = total - showPerPage;
     const ending = total;
     onPaginationChange(starting, ending);
-    console.log(starting, ending);
   }, [counter]);
 
   const onBttonClick = (type) => {
@@ -25,29 +24,12 @@ const AuthorListPagination = ({
     } else if (type === "next") {
       noOfButton === counter ? setCounter(counter) : setCounter(counter + 1);
     }
-
-    // type==="prev"&&counter===1?setCounter(1):setCounter(counter-1);
-    // type=="next"&& counter===(Math.ceil(totalAuthors/showPerPage))?setCounter(counter):setCounter(counter+1);
-
-    // let page = (Math.ceil(totalAuthors/showPerPage));
-    // console.log(page);
-    // console.log(type);
-    // switch (type) {
-    //   case "prev":
-    //     counter===1?setCounter(1):setCounter(counter-1);
-    //     break;
-    //   case "next":
-    //     counter===page?setCounter(counter):setCounter(counter+1);
-    //   default:
-    //     setCounter(counter);
-    // }
   };
 
   let numberOfButton = [];
   for (let i = 0; i < noOfButton; i++) {
     numberOfButton.push(i + 1);
   }
-  console.log(numberOfButton);
 
   return (
     <div className="d-flex justify-content-center">
@@ -81,14 +63,3 @@ const AuthorListPagination = ({
 };
 
 export default AuthorListPagination;
-
-// For Simple Previous and Next Button
-
-{
-  /* <button className="btn btn-primary" onClick={() => onBttonClick("prev")}>
-        Previous
-      </button>
-      <button className="btn btn-primary" onClick={() => onBttonClick("next")}>
-        Next
-      </button> */
-}
